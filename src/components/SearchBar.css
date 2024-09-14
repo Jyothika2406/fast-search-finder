@@ -1,0 +1,150 @@
+/* Container for the search bar */
+.search-bar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: first first baseline;
+  margin-top: 50px;
+  position: relative;
+  background-color: #f4f6f8; /* Light background */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Google-style search input */
+.search-input {
+  width: 60%;
+  max-width: 600px;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border: 1px solid #cfd4da;
+  border-radius: 50px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  outline: none;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+  background-color: #ffffff; /* Clean white background */
+  color: #333; /* Dark text */
+}
+
+.search-input:focus {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on focus */
+  border-color: #0056b3; /* Elegant blue focus border */
+}
+
+.search-input::placeholder {
+  color: #9aa0a6;
+  opacity: 1;
+}
+
+/* Suggestions box */
+.suggestions {
+  position: absolute;
+  width: 60%;
+  max-width: 600px;
+  background: #ffffff;
+  border: 1px solid #cfd4da;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Smooth shadow */
+  margin-top: 5px;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Individual suggestion item */
+.suggestion-item {
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease;
+  color: #495057; /* Slightly darker text for suggestions */
+}
+
+.suggestion-item:hover {
+  background-color: #e9ecef; /* Light grey hover background */
+  color: #212529; /* Darker hover text */
+}
+
+/* Country name and capital styling */
+.country-name {
+  font-weight: bold;
+  color: #343a40; /* Darker, elegant font color */
+}
+
+.capital-name {
+  color: #6c757d; /* Soft grey for subtle appearance */
+}
+
+/* Wrapper for search bar and icon */
+.search-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for the search icon */
+.search-icon {
+  position: absolute;
+  left: 20px;
+  color: #0056b3; /* Elegant blue for the icon */
+  font-size: 1.5rem;
+}
+
+/* Padding adjustment to leave space for the icon */
+.search-input {
+  padding-left: 50px;
+}
+
+/* Ensure responsiveness for mobile screens */
+@media (max-width: 768px) {
+  .search-input {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .suggestions {
+    width: 90%;
+  }
+}
+
+/* Dark mode styling */
+@media (prefers-color-scheme: dark) {
+  .search-bar-container {
+    background-color: #1e1e1e; /* Dark background for dark mode */
+  }
+
+  .search-input {
+    background-color: #2c2c2c; /* Dark input background */
+    border: 1px solid #444; /* Dark border */
+    color: #ddd; /* Lighter text */
+  }
+
+  .search-input:focus {
+    border-color: #666; /* Focus border in dark mode */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Lighter shadow in dark mode */
+  }
+
+  .search-input::placeholder {
+    color: #888;
+  }
+
+  .suggestions {
+    background: #2c2c2c; /* Dark suggestions background */
+    border: 1px solid #444;
+  }
+
+  .suggestion-item {
+    color: #ccc; /* Lighter text for suggestions */
+  }
+
+  .suggestion-item:hover {
+    background-color: #444; /* Darker hover background */
+    color: #fff; /* White hover text */
+  }
+
+  .search-icon {
+    color: #888; /* Light grey icon for dark mode */
+  }
+}
